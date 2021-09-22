@@ -1,8 +1,12 @@
 const express = require('express')
-const cors  =require('cors')
+const cors  = require('cors')
 const config = require('./app/config')
+const setupContactRoutes = require('./app/routes/contact.routes')
+
+
 
 const app = express()
+setupContactRoutes(app)
 
 app.use(cors({origin : config.app.origins}))
 
